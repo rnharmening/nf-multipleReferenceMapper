@@ -1,0 +1,15 @@
+  # You can use this file to create a conda environment for this pipeline:
+  #   conda env create -f environment.yml
+  name: nf-multi_ref_mapper
+  channels:
+    - conda-forge
+    - bioconda
+    - defaults
+  dependencies:
+    - bioconda::fastqc=0.11.8
+    - bioconda::multiqc=1.7
+    - bioconda::samtools=1.9
+    - bioconda::bwa=0.7.17
+    - bioconda::qualimap=2.2.2a
+    - bioconda::adapterremoval=2.3.1
+    - bioconda::dedup=0.12.5
