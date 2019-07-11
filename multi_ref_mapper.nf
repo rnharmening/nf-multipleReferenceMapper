@@ -72,6 +72,25 @@ process adapterremoval {
   """
 }
 
+process prinseq_derep {
+  tag "$read_id"
+
+  input:
+    set read_id, file(reads) from adapter_removed_ch
+  
+  output:
+    set read_id, file(derep_reads) into derep_reads_ch
+
+  script:
+  out="derep_fastqs"
+  derep_reads = "${out}/*.fastq"
+  """
+    prinseq-lite.pl -out_format 3 -derep 23 -fastq ${reads[0]} -fastq2 ${reads[1]} -out_good $read_id -out_bad null
+    mkdir -p ${out}
+    mv *.fastq ${out}
+  """
+}
+
 process bwa_index {
   input:
     file fasta from ref_ch
@@ -93,7 +112,7 @@ process bwamem {
   publishDir "${params.outdir}/BWA_mapping", mode: 'copy'
 
   input:
-    set read_id, file(reads), val(ref_id), file(bwa_index) from adapter_removed_ch.combine(bwa_index_ch)  
+    set read_id, file(reads), val(ref_id), file(bwa_index) from derep_reads_ch.combine(bwa_index_ch)  
 
   output:
     set sample_id, file(bam_file) into mapping_pair_ch 

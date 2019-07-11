@@ -1,0 +1,18 @@
+
+# Nextflow specific log and report directories
+data/
+work/
+results/
+.nextflow/
+# files
+.nextflow.log*
+flowchart.*
+report.html*
+timeline.html*
+.nextflow*
+
+# git specifics
+.git/
+
+# all hidden directories
+.*/
