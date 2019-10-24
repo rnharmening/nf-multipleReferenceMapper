@@ -13,3 +13,4 @@
     - bioconda::qualimap=2.2.2a
     - bioconda::adapterremoval=2.3.1
     - bioconda::dedup=0.12.5
+    - bioconda::prinseq=0.20.4
