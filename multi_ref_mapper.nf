@@ -3,7 +3,7 @@
 params.fastas  = "demo/references/*.fa"
 params.reads       = "demo/reads/*_R{1,2}.fastq"
 params.outdir     = "./results"
-params.singleEnd   = false
+// params.singleEnd   = false
 params.keepOnlyMapped = false
 
 
@@ -16,7 +16,7 @@ def helpMessage() {
 
     Options:
       --outdir                     Specifies the output directory [./results/]
-      --singleEnd                   Set iff input reads are single end [false]
+      --singleEnd                  Set if input reads are single end [false]
     """.stripIndent()
 }
 
