@@ -16,7 +16,7 @@ def helpMessage() {
 
     Options:
       --outdir                     Specifies the output directory [./results/]
-      --singleEnd                  Set if input reads are single end [false]
+      --singleEnd                  (Not functioning) Set if input reads are single end [false]
     """.stripIndent()
 }
 
