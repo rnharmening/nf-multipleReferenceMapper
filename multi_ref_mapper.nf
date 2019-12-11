@@ -132,21 +132,6 @@ process bwamem {
   """
 }
 
-/*
-process dedup {
-  input:
-     set sample_id, file(bam_file) from mapping_pair_ch 
-
-  output:
-
-  
-  script:
-  """
-  
-  """
-}
-*/
-
 process qualimap {
   tag "$sample_id"
   publishDir "${params.outdir}/qualimap", mode: 'copy'
