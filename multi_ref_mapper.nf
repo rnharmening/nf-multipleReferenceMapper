@@ -3,7 +3,7 @@
 params.fastas  = "demo/references/*.fa"
 params.reads       = "demo/reads/*_R{1,2}.fastq"
 params.outdir     = "./results"
-// params.singleEnd   = false
+params.singleEnd   = false
 params.keepOnlyMapped = false
 
 
